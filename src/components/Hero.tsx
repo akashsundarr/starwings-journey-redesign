@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
+  const navigate = useNavigate();
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=Hi%20Starwings%2C%20I%20would%20like%20to%20enquire%20about%20a%20trip.`;
 
   return (
@@ -27,7 +29,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <button
-              onClick={() => document.getElementById("vehicles")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => navigate("/booking")}
               className="rounded-lg bg-accent px-8 py-4 text-base font-bold text-accent-foreground shadow-lg transition-all hover:shadow-xl hover:brightness-110"
             >
               Book a Vehicle

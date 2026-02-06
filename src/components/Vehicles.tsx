@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { vehicles } from "@/lib/site-config";
 import sedanImg from "@/assets/vehicle-sedan.jpg";
 import suvImg from "@/assets/vehicle-suv.jpg";
@@ -10,6 +11,8 @@ const imageMap: Record<string, string> = {
 };
 
 export default function Vehicles() {
+  const navigate = useNavigate();
+
   return (
     <section id="vehicles" className="section-padding bg-secondary">
       <div className="container-custom">
@@ -45,7 +48,7 @@ export default function Vehicles() {
                   <span className="text-sm text-muted-foreground">starting</span>
                 </div>
                 <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => navigate(`/booking?vehicle=${encodeURIComponent(v.name)}`)}
                   className="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   Book This Vehicle →
