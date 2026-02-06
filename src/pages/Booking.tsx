@@ -66,7 +66,7 @@ export default function Booking() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="section-padding">
         <div className="container-custom">
           <div className="mx-auto max-w-2xl">

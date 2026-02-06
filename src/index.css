@@ -2,54 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700&family=Inter:wght@400;600&display=swap');
 
 @layer base {
-  :root {
-    --background: 220 20% 97%;
-    --foreground: 232 95% 19%;
+ :root {
+    /* Base: Clean White/Off-White */
+    --background: 0 0% 100%;
+    --foreground: 234 46% 20%; /* Dark Navy for text (Readable) */
 
+    /* Cards: Pure White to pop against the gray bg */
     --card: 0 0% 100%;
-    --card-foreground: 232 95% 19%;
+    --card-foreground: 234 46% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 232 95% 19%;
+    --popover-foreground: 234 46% 20%;
 
-    --primary: 232 95% 19%;
+    /* PRIMARY: The "ings" Blue (Royal/Navy Blue) */
+    /* Updated from 19% lightness to 36% to match the logo */
+    --primary: 234 46% 36%; 
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 94%;
-    --secondary-foreground: 232 95% 19%;
+    /* SECONDARY: Light Blue/Grey wash */
+    --secondary: 234 20% 96%;
+    --secondary-foreground: 234 46% 36%;
 
+    /* MUTED: The "Solutions" Grey */
     --muted: 220 14% 96%;
-    --muted-foreground: 232 30% 40%;
+    --muted-foreground: 210 4% 55%; /* Exact match to "Solutions" text */
 
-    --accent: 84 96% 61%;
-    --accent-foreground: 232 95% 19%;
+    /* ACCENT: The Swoosh Green (Leafy/Lime) */
+    /* Updated hue to 78 to match the logo's yellow-green tone */
+    --accent: 78 88% 42%; 
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 14% 90%;
-    --input: 220 14% 90%;
-    --ring: 232 95% 19%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 234 46% 36%; /* Matches Primary */
 
     --radius: 0.625rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 232 95% 19%;
-    --sidebar-primary: 232 95% 19%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 84 96% 61%;
-    --sidebar-accent-foreground: 232 95% 19%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 232 95% 19%;
+    /* Sidebar / Navigation (Optional: Uses Primary Brand Color) */
+    --sidebar-background: 234 46% 36%; /* Blue sidebar */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 234 46% 36%;
+    --sidebar-accent: 78 88% 42%; /* Green accent in sidebar */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 234 40% 45%;
+    --sidebar-ring: 78 88% 42%;
 
-    /* Custom tokens */
+    /* Custom Tokens */
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
-    --warm-surface: 220 20% 96%;
-    --hero-overlay: 232 95% 19%;
+    --warm-surface: 40 20% 98%;
+    --hero-overlay: 234 46% 20%;
   }
 
   .dark {
@@ -88,14 +97,15 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+ body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
   }
 
   h1, h2, h3 {
-    font-family: 'Instrument Serif', Georgia, serif;
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "SOFT" 100; /* Makes it feel friendlier */
     font-style: italic;
   }
 }

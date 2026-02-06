@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Starwings Tours & Travels",
-  phone: "+91 98765 43210",
-  email: "info@starwingstravels.com",
-  whatsapp: "919876543210",
-  address: "Coimbatore, Tamil Nadu, India",
+  phone: "+91 730606 3033",
+  email: "akashsundarrr@gmail.com",
+  whatsapp: "917306063033",
+  address: "Kochi, Kerala, India",
 };
 
 export const vehicles = [

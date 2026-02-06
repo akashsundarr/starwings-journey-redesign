@@ -8,6 +8,7 @@ const imageMap: Record<string, string> = {
   sedan: sedanImg,
   suv: suvImg,
   tempo: tempoImg,
+  
 };
 
 export default function Vehicles() {

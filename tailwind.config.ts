@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
-        display: ["Instrument Serif", "Georgia", "serif"],
+        // Map 'sans' to Inter
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        // Map 'display' to Fraunces
+        display: ["Fraunces", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

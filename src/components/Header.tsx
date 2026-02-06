@@ -1,9 +1,26 @@
-import { useState } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, Menu, X, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils"; // Standard shadcn utility
+
+const navItems = [
+  { label: "Home", id: "hero" },
+  { label: "About", id: "about" },
+  { label: "Why Us", id: "why-us" },
+  { label: "Vehicles", id: "vehicles" },
+  { label: "Contact", id: "contact" },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for sticky header transparency
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -11,78 +28,91 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm shadow-sm">
-      <div className="container-custom">
-        <div className="flex h-16 items-center justify-between">
-          <button onClick={() => scrollTo("hero")} className="text-xl font-bold font-display text-primary">
-            {siteConfig.name}
-          </button>
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-4 py-3",
+        scrolled ? "mt-2" : "mt-0"
+      )}
+    >
+      <div
+        className={cn(
+          "container mx-auto transition-all duration-300 rounded-2xl border border-transparent",
+          scrolled 
+            ? "bg-background/80 backdrop-blur-md shadow-lg border-border/50 py-2" 
+            : "bg-transparent py-4"
+        )}
+      >
+        <div className="flex items-center justify-between px-4 md:px-6">
+          {/* Logo Section */}
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo("hero")}>
+            <img
+              src="/logo.png"
+              alt="Starwings Logo"
+              className="h-9 w-auto object-contain"
+            />
+          </div>
 
-          <nav className="hidden items-center gap-8 md:flex">
-            {[
-              ["Home", "hero"],
-              ["About", "about"],
-              ["Why Us", "why-us"],
-              ["Vehicles", "vehicles"],
-              ["Contact", "contact"],
-            ].map(([label, id]) => (
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
               <button
-                key={id}
-                onClick={() => scrollTo(id)}
-                className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="group relative px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
-                {label}
+                {item.label}
+                <span className="absolute inset-x-4 bottom-1 h-0.5 scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
               </button>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          {/* CTA Section */}
+          <div className="flex items-center gap-4">
             <a
               href={`tel:${siteConfig.phone}`}
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              className="hidden md:flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-md transition-all hover:shadow-primary/20 hover:scale-105 active:scale-95"
             >
               <Phone className="h-4 w-4" />
-              Call Now
+              <span>Book Now</span>
             </a>
-          </div>
 
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 md:hidden text-foreground"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            {/* Mobile Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/50 text-foreground md:hidden"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
-        {mobileMenuOpen && (
-          <nav className="border-t border-border py-4 md:hidden animate-fade-in">
-            <div className="flex flex-col gap-3">
-              {[
-                ["Home", "hero"],
-                ["About", "about"],
-                ["Why Us", "why-us"],
-                ["Vehicles", "vehicles"],
-                ["Contact", "contact"],
-              ].map(([label, id]) => (
-                <button
-                  key={id}
-                  onClick={() => scrollTo(id)}
-                  className="text-left text-sm font-medium text-foreground/70 transition-colors hover:text-primary px-2 py-1"
-                >
-                  {label}
-                </button>
-              ))}
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground mt-2 justify-center"
+        {/* Mobile Navigation Menu */}
+        <div
+          className={cn(
+            "overflow-hidden transition-all duration-300 ease-in-out md:hidden",
+            mobileMenuOpen ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          )}
+        >
+          <div className="grid gap-2 border-t border-border pt-4 pb-2">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
               >
-                <Phone className="h-4 w-4" />
-                Call Now
-              </a>
-            </div>
-          </nav>
-        )}
+                {item.label}
+                <ChevronRight size={16} className="text-muted-foreground" />
+              </button>
+            ))}
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary py-4 text-sm font-bold text-primary-foreground"
+            >
+              <Phone size={18} />
+              Call Starwings
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   );
