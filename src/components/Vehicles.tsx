@@ -223,6 +223,54 @@ export default function Vehicles() {
             </div>
           ))}
         </div>
+        <div className="mt-16">
+  {/* Optional heading (remove if not needed) */}
+  <div className="mx-auto max-w-6xl text-center px-4">
+    <h3 className="text-2xl font-bold text-foreground md:text-3xl">
+      Our Vehicle Fleet
+    </h3>
+    <p className="mt-3 text-muted-foreground">
+      A complete range of vehicles for every travel need.
+    </p>
+  </div>
+
+  {/* Full-width lineup */}
+  <div className="mt-10 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+  <div
+    className="
+      mx-auto
+      w-full
+      max-w-none
+
+      /* HEIGHT CONTROL */
+      min-h-[260px]
+      sm:min-h-[340px]
+      md:min-h-[420px]
+      lg:min-h-[520px]
+      xl:min-h-[600px]
+
+      /* ASPECT RATIO BACKUP */
+      aspect-[16/6]
+      sm:aspect-[16/5]
+      md:aspect-[16/4.2]
+    "
+  >
+    <img
+      src="/src/assets/line-up.png"
+      alt="Complete vehicle fleet lineup"
+      loading="lazy"
+      className="
+        h-full
+        w-full
+        object-contain
+        drop-shadow-2xl
+      "
+    />
+  </div>
+</div>
+
+</div>
+
       </div>
     </section>
   );
