@@ -1,115 +1,81 @@
+
+/* ------------------------------
+   FONTS
+-------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700&family=Inter:wght@400;600&display=swap');
+/* ------------------------------
+   GLOBAL HARD RESET (CRITICAL)
+-------------------------------- */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
 
+/* ------------------------------
+   HIDE SCROLLBAR (CROSS-BROWSER)
+-------------------------------- */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE / Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+
+/* ------------------------------
+   THEME TOKENS
+-------------------------------- */
 @layer base {
- :root {
-    /* Base: Clean White/Off-White */
+  :root {
     --background: 0 0% 100%;
-    --foreground: 234 46% 20%; /* Dark Navy for text (Readable) */
+    --foreground: 234 46% 20%;
 
-    /* Cards: Pure White to pop against the gray bg */
     --card: 0 0% 100%;
     --card-foreground: 234 46% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 234 46% 20%;
-
-    /* PRIMARY: The "ings" Blue (Royal/Navy Blue) */
-    /* Updated from 19% lightness to 36% to match the logo */
-    --primary: 234 46% 36%; 
+    --primary: 234 46% 36%;
     --primary-foreground: 0 0% 100%;
 
-    /* SECONDARY: Light Blue/Grey wash */
     --secondary: 234 20% 96%;
     --secondary-foreground: 234 46% 36%;
 
-    /* MUTED: The "Solutions" Grey */
     --muted: 220 14% 96%;
-    --muted-foreground: 210 4% 55%; /* Exact match to "Solutions" text */
-
-    /* ACCENT: The Swoosh Green (Leafy/Lime) */
-    /* Updated hue to 78 to match the logo's yellow-green tone */
-    --accent: 78 88% 42%; 
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --muted-foreground: 210 4% 55%;
 
     --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 234 46% 36%; /* Matches Primary */
-
     --radius: 0.625rem;
-
-    /* Sidebar / Navigation (Optional: Uses Primary Brand Color) */
-    --sidebar-background: 234 46% 36%; /* Blue sidebar */
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 234 46% 36%;
-    --sidebar-accent: 78 88% 42%; /* Green accent in sidebar */
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 234 40% 45%;
-    --sidebar-ring: 78 88% 42%;
-
-    /* Custom Tokens */
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
-    --warm-surface: 40 20% 98%;
-    --hero-overlay: 234 46% 20%;
   }
 
-  .dark {
-    --background: 222 84% 5%;
-    --foreground: 210 40% 98%;
-    --card: 222 84% 5%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 84% 5%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 18%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 213 27% 84%;
-    --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 224 76% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4% 16%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
- body {
+  body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
   }
 
-  h1, h2, h3 {
-    font-family: 'Fraunces', serif;
-    font-variation-settings: "SOFT" 100; /* Makes it feel friendlier */
-    font-style: italic;
+  h1,
+  h2,
+  h3 {
+    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+    font-style: normal;
   }
 }
 
+/* ------------------------------
+   LAYOUT HELPERS
+-------------------------------- */
 @layer components {
   .section-padding {
     @apply py-16 md:py-24;
@@ -117,11 +83,5 @@
 
   .container-custom {
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }

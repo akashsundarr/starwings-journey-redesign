@@ -14,11 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        // Map 'sans' to Inter
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
-        // Map 'display' to Fraunces
-        display: ["Fraunces", "serif"],
-      },
+  sans: ["Outfit", "ui-sans-serif", "system-ui", "sans-serif"],
+  display: ["Outfit", "ui-sans-serif", "system-ui", "sans-serif"],
+},
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

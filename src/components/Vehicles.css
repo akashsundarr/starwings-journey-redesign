@@ -1,0 +1,32 @@
+/* Vehicles.css */
+
+/* Mobile slider */
+.vehicle-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+}
+
+/* Individual card */
+.vehicle-card {
+  scroll-snap-align: center;
+  width: 85vw;
+  flex-shrink: 0;
+}
+
+/* Desktop override */
+@media (min-width: 1024px) {
+  .vehicle-slider {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .vehicle-card {
+    width: auto;
+  }
+}

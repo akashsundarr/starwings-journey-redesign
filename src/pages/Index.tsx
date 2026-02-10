@@ -13,9 +13,9 @@ export default function Index() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <WhyChooseUs />
         <Vehicles />
+        <About />
+        <WhyChooseUs />      
         <Testimonials />
         <Contact />
       </main>

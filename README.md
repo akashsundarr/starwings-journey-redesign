@@ -71,3 +71,224 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+```
+starwings-journey-redesign
+├─ bun.lockb
+├─ components.json
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.js
+├─ public
+│  ├─ favicon.ico
+│  ├─ logo.png
+│  ├─ placeholder.svg
+│  └─ robots.txt
+├─ README.md
+├─ src
+│  ├─ App.css
+│  ├─ App.tsx
+│  ├─ assets
+│  │  └─ hero-bg.jpg
+│  ├─ components
+│  │  ├─ About.tsx
+│  │  ├─ Contact.tsx
+│  │  ├─ Footer.tsx
+│  │  ├─ Header.tsx
+│  │  ├─ Hero.tsx
+│  │  ├─ NavLink.tsx
+│  │  ├─ Testimonials.tsx
+│  │  ├─ ui
+│  │  │  ├─ accordion.tsx
+│  │  │  ├─ alert-dialog.tsx
+│  │  │  ├─ alert.tsx
+│  │  │  ├─ aspect-ratio.tsx
+│  │  │  ├─ avatar.tsx
+│  │  │  ├─ badge.tsx
+│  │  │  ├─ breadcrumb.tsx
+│  │  │  ├─ button.tsx
+│  │  │  ├─ calendar.tsx
+│  │  │  ├─ card.tsx
+│  │  │  ├─ carousel.tsx
+│  │  │  ├─ chart.tsx
+│  │  │  ├─ checkbox.tsx
+│  │  │  ├─ collapsible.tsx
+│  │  │  ├─ command.tsx
+│  │  │  ├─ context-menu.tsx
+│  │  │  ├─ dialog.tsx
+│  │  │  ├─ drawer.tsx
+│  │  │  ├─ dropdown-menu.tsx
+│  │  │  ├─ form.tsx
+│  │  │  ├─ hover-card.tsx
+│  │  │  ├─ input-otp.tsx
+│  │  │  ├─ input.tsx
+│  │  │  ├─ label.tsx
+│  │  │  ├─ menubar.tsx
+│  │  │  ├─ navigation-menu.tsx
+│  │  │  ├─ pagination.tsx
+│  │  │  ├─ popover.tsx
+│  │  │  ├─ progress.tsx
+│  │  │  ├─ radio-group.tsx
+│  │  │  ├─ resizable.tsx
+│  │  │  ├─ scroll-area.tsx
+│  │  │  ├─ select.tsx
+│  │  │  ├─ separator.tsx
+│  │  │  ├─ sheet.tsx
+│  │  │  ├─ sidebar.tsx
+│  │  │  ├─ skeleton.tsx
+│  │  │  ├─ slider.tsx
+│  │  │  ├─ sonner.tsx
+│  │  │  ├─ switch.tsx
+│  │  │  ├─ table.tsx
+│  │  │  ├─ tabs.tsx
+│  │  │  ├─ textarea.tsx
+│  │  │  ├─ toast.tsx
+│  │  │  ├─ toaster.tsx
+│  │  │  ├─ toggle-group.tsx
+│  │  │  ├─ toggle.tsx
+│  │  │  ├─ tooltip.tsx
+│  │  │  └─ use-toast.ts
+│  │  ├─ Vehicles.tsx
+│  │  ├─ WhatsAppFloat.tsx
+│  │  └─ WhyChooseUs.tsx
+│  ├─ hooks
+│  │  ├─ use-mobile.tsx
+│  │  └─ use-toast.ts
+│  ├─ index.css
+│  ├─ lib
+│  │  ├─ site-config.ts
+│  │  ├─ utils.ts
+│  │  ├─ validation.ts
+│  │  └─ whatsapp.ts
+│  ├─ main.tsx
+│  ├─ pages
+│  │  ├─ Booking.tsx
+│  │  ├─ Index.tsx
+│  │  └─ NotFound.tsx
+│  ├─ test
+│  │  ├─ example.test.ts
+│  │  └─ setup.ts
+│  └─ vite-env.d.ts
+├─ tailwind.config.ts
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+├─ vite.config.ts
+└─ vitest.config.ts
+
+```
+```
+starwings-journey-redesign
+├─ bun.lockb
+├─ components.json
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.js
+├─ public
+│  ├─ favicon.ico
+│  ├─ logo.png
+│  ├─ placeholder.svg
+│  └─ robots.txt
+├─ README.md
+├─ src
+│  ├─ App.css
+│  ├─ App.tsx
+│  ├─ assets
+│  │  ├─ benz-c-class.jpg
+│  │  ├─ ciaz.webp
+│  │  ├─ coach-non-ac.webp
+│  │  ├─ hero-bg.jpg
+│  │  ├─ innova-crysta.webp
+│  │  ├─ tempo-travellor.webp
+│  │  └─ urbania.webp
+│  ├─ components
+│  │  ├─ About.tsx
+│  │  ├─ Contact.tsx
+│  │  ├─ Footer.tsx
+│  │  ├─ Header.tsx
+│  │  ├─ Hero.tsx
+│  │  ├─ NavLink.tsx
+│  │  ├─ Testimonials.tsx
+│  │  ├─ ui
+│  │  │  ├─ accordion.tsx
+│  │  │  ├─ alert-dialog.tsx
+│  │  │  ├─ alert.tsx
+│  │  │  ├─ aspect-ratio.tsx
+│  │  │  ├─ avatar.tsx
+│  │  │  ├─ badge.tsx
+│  │  │  ├─ breadcrumb.tsx
+│  │  │  ├─ button.tsx
+│  │  │  ├─ calendar.tsx
+│  │  │  ├─ card.tsx
+│  │  │  ├─ carousel.tsx
+│  │  │  ├─ chart.tsx
+│  │  │  ├─ checkbox.tsx
+│  │  │  ├─ collapsible.tsx
+│  │  │  ├─ command.tsx
+│  │  │  ├─ context-menu.tsx
+│  │  │  ├─ dialog.tsx
+│  │  │  ├─ drawer.tsx
+│  │  │  ├─ dropdown-menu.tsx
+│  │  │  ├─ form.tsx
+│  │  │  ├─ hover-card.tsx
+│  │  │  ├─ input-otp.tsx
+│  │  │  ├─ input.tsx
+│  │  │  ├─ label.tsx
+│  │  │  ├─ menubar.tsx
+│  │  │  ├─ navigation-menu.tsx
+│  │  │  ├─ pagination.tsx
+│  │  │  ├─ popover.tsx
+│  │  │  ├─ progress.tsx
+│  │  │  ├─ radio-group.tsx
+│  │  │  ├─ resizable.tsx
+│  │  │  ├─ scroll-area.tsx
+│  │  │  ├─ select.tsx
+│  │  │  ├─ separator.tsx
+│  │  │  ├─ sheet.tsx
+│  │  │  ├─ sidebar.tsx
+│  │  │  ├─ skeleton.tsx
+│  │  │  ├─ slider.tsx
+│  │  │  ├─ sonner.tsx
+│  │  │  ├─ switch.tsx
+│  │  │  ├─ table.tsx
+│  │  │  ├─ tabs.tsx
+│  │  │  ├─ textarea.tsx
+│  │  │  ├─ toast.tsx
+│  │  │  ├─ toaster.tsx
+│  │  │  ├─ toggle-group.tsx
+│  │  │  ├─ toggle.tsx
+│  │  │  ├─ tooltip.tsx
+│  │  │  └─ use-toast.ts
+│  │  ├─ Vehicles.tsx
+│  │  ├─ WhatsAppFloat.tsx
+│  │  └─ WhyChooseUs.tsx
+│  ├─ hooks
+│  │  ├─ use-mobile.tsx
+│  │  └─ use-toast.ts
+│  ├─ index.css
+│  ├─ lib
+│  │  ├─ site-config.ts
+│  │  ├─ utils.ts
+│  │  ├─ validation.ts
+│  │  └─ whatsapp.ts
+│  ├─ main.tsx
+│  ├─ pages
+│  │  ├─ Booking.tsx
+│  │  ├─ Index.tsx
+│  │  └─ NotFound.tsx
+│  ├─ test
+│  │  ├─ example.test.ts
+│  │  └─ setup.ts
+│  └─ vite-env.d.ts
+├─ tailwind.config.ts
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+├─ vite.config.ts
+└─ vitest.config.ts
+
+```
