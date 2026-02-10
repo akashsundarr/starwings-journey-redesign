@@ -2,7 +2,7 @@ import ciazImg from "@/assets/ciaz.webp";
 import innovaImg from "@/assets/innova-crysta.webp";
 import tempoImg from "@/assets/tempo-travellor.webp";
 import urbaniaImg from "@/assets/urbania.webp";
-import benzImg from "@/assets/benz-c-class.jpg";
+import benzImg from "@/assets/benz-c-class.webp";
 import coachImg from "@/assets/coach-non-ac.webp";
 
 
