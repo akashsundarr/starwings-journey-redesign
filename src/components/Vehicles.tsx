@@ -2,7 +2,7 @@ import { vehicles } from "@/lib/site-config";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import "./Vehicles.css";
-import lineupImg from "@/assets/line-up3.png";
+import lineupImg from "@/assets/line-up2.png";
 
 export default function Vehicles() {
   const navigate = useNavigate();
@@ -97,12 +97,12 @@ export default function Vehicles() {
   }, []);
 
   return (
-    <section id="vehicles" className="section-padding bg-secondary">
+    <section id="vehicles" className="section-padding ">
       <div className="container-custom relative">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl font-display">
-            Best Travel Operator in Coimbatore
+            Best Travel Operator in Kochi
           </h2>
           <p className="mt-4 text-muted-foreground">
             Choose from our well-maintained vehicles for a safe, comfortable,
@@ -236,7 +236,7 @@ export default function Vehicles() {
   </div>
 
   {/* Full-width lineup */}
-  <div className="mt-10 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+  <div className="mt-4 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
   <div
     className="
       mx-auto
