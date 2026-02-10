@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
 
-import hero1 from "@/assets/ciaz-sen.png";
-import hero2 from "@/assets/urbania-sen.png";
+import hero1 from "@/assets/ciaz-sen.webp";
+import hero2 from "@/assets/urbania-sen.webp";
+import hero3 from "@/assets/crysta-sen.webp";
 
-const images = [hero1, hero2];
+const images = [hero1, hero2, hero3];
 
 export default function Hero() {
   const sliderRef = useRef(null);
@@ -38,7 +39,7 @@ export default function Hero() {
               src={src}
               alt={`Hero slide ${i + 1}`}
               loading={i === 0 ? "eager" : "lazy"}
-              fetchpriority={i === 0 ? "high" : "auto"}
+              fetchPriority={i === 0 ? "high" : "auto"}
               className="w-full h-full object-cover"
             />
           </div>

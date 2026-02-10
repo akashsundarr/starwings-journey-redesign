@@ -4,8 +4,8 @@ import { ArrowLeft, Send } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { validateBooking } from "@/lib/validation";
 import { buildWhatsAppMessage } from "@/lib/whatsapp";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { vehicles } from "@/lib/site-config";
 
 const inputClass =
   "w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/20";
@@ -66,7 +66,6 @@ export default function Booking() {
 
   return (
     <div className="min-h-screen bg-background">
-      
       <main className="section-padding">
         <div className="container-custom">
           <div className="mx-auto max-w-2xl">
@@ -82,7 +81,8 @@ export default function Booking() {
               Book Your Vehicle
             </h1>
             <p className="mt-3 text-muted-foreground">
-              Fill in your trip details below and we'll connect you on WhatsApp with the best options.
+              Fill in your trip details below and we'll connect you on WhatsApp
+              with the best options.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-10 space-y-8">
@@ -101,19 +101,38 @@ export default function Booking() {
                   <label htmlFor="name" className={labelClass}>
                     Full Name <span className="text-destructive">*</span>
                   </label>
-                  <input id="name" type="text" name="name" placeholder="Enter your full name" className={inputClass} />
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    className={inputClass}
+                  />
                 </div>
                 <div>
                   <label htmlFor="mobile" className={labelClass}>
                     Mobile Number <span className="text-destructive">*</span>
                   </label>
-                  <input id="mobile" type="tel" name="mobile" placeholder="10-digit mobile number" maxLength={10} className={inputClass} />
+                  <input
+                    id="mobile"
+                    type="tel"
+                    name="mobile"
+                    placeholder="10-digit mobile number"
+                    maxLength={10}
+                    className={inputClass}
+                  />
                 </div>
                 <div>
                   <label htmlFor="email" className={labelClass}>
                     Email Address
                   </label>
-                  <input id="email" type="email" name="email" placeholder="your.email@example.com" className={inputClass} />
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    className={inputClass}
+                  />
                 </div>
               </fieldset>
 
@@ -137,11 +156,18 @@ export default function Booking() {
                   <label htmlFor="vehicle" className={labelClass}>
                     Select Vehicle <span className="text-destructive">*</span>
                   </label>
-                  <select id="vehicle" name="vehicle" defaultValue={preselectedVehicle} className={inputClass}>
-                    <option value="">Select vehicle type</option>
-                    <option value="Sedan">Sedan</option>
-                    <option value="SUV / Innova">SUV / Innova</option>
-                    <option value="Tempo Traveller">Tempo Traveller</option>
+                  <select
+                    name="vehicle"
+                    required
+                    className="w-full rounded-md border px-3 py-2"
+                  >
+                    <option value="">Select Vehicle</option>
+
+                    {vehicles.map((vehicle) => (
+                      <option key={vehicle.id} value={vehicle.id}>
+                        {vehicle.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </fieldset>
@@ -153,12 +179,30 @@ export default function Booking() {
                 </legend>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="adults" className={labelClass}>Adults</label>
-                    <input id="adults" type="number" name="adults" min={1} defaultValue={1} className={inputClass} />
+                    <label htmlFor="adults" className={labelClass}>
+                      Adults
+                    </label>
+                    <input
+                      id="adults"
+                      type="number"
+                      name="adults"
+                      min={1}
+                      defaultValue={1}
+                      className={inputClass}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="children" className={labelClass}>Children</label>
-                    <input id="children" type="number" name="children" min={0} defaultValue={0} className={inputClass} />
+                    <label htmlFor="children" className={labelClass}>
+                      Children
+                    </label>
+                    <input
+                      id="children"
+                      type="number"
+                      name="children"
+                      min={0}
+                      defaultValue={0}
+                      className={inputClass}
+                    />
                   </div>
                 </div>
               </fieldset>
@@ -169,31 +213,67 @@ export default function Booking() {
                   Trip Details
                 </legend>
                 <div>
-                  <label htmlFor="destination" className={labelClass}>Destination</label>
-                  <input id="destination" type="text" name="destination" placeholder="Where are you traveling to?" className={inputClass} />
+                  <label htmlFor="destination" className={labelClass}>
+                    Destination
+                  </label>
+                  <input
+                    id="destination"
+                    type="text"
+                    name="destination"
+                    placeholder="Where are you traveling to?"
+                    className={inputClass}
+                  />
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="pickup" className={labelClass}>Pickup Location</label>
-                    <input id="pickup" type="text" name="pickup" placeholder="Pickup address" className={inputClass} />
+                    <label htmlFor="pickup" className={labelClass}>
+                      Pickup Location
+                    </label>
+                    <input
+                      id="pickup"
+                      type="text"
+                      name="pickup"
+                      placeholder="Pickup address"
+                      className={inputClass}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="drop" className={labelClass}>Drop Location</label>
-                    <input id="drop" type="text" name="drop" placeholder="Drop-off address" className={inputClass} />
+                    <label htmlFor="drop" className={labelClass}>
+                      Drop Location
+                    </label>
+                    <input
+                      id="drop"
+                      type="text"
+                      name="drop"
+                      placeholder="Drop-off address"
+                      className={inputClass}
+                    />
                   </div>
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="pickupDate" className={labelClass}>
-                      Pickup Date & Time <span className="text-destructive">*</span>
+                      Pickup Date & Time{" "}
+                      <span className="text-destructive">*</span>
                     </label>
-                    <input id="pickupDate" type="datetime-local" name="pickupDate" className={inputClass} />
+                    <input
+                      id="pickupDate"
+                      type="datetime-local"
+                      name="pickupDate"
+                      className={inputClass}
+                    />
                   </div>
                   <div>
                     <label htmlFor="dropDate" className={labelClass}>
-                      Drop Date & Time <span className="text-destructive">*</span>
+                      Drop Date & Time{" "}
+                      <span className="text-destructive">*</span>
                     </label>
-                    <input id="dropDate" type="datetime-local" name="dropDate" className={inputClass} />
+                    <input
+                      id="dropDate"
+                      type="datetime-local"
+                      name="dropDate"
+                      className={inputClass}
+                    />
                   </div>
                 </div>
               </fieldset>
@@ -204,7 +284,9 @@ export default function Booking() {
                   Additional Information
                 </legend>
                 <div>
-                  <label htmlFor="notes" className={labelClass}>Special Requirements</label>
+                  <label htmlFor="notes" className={labelClass}>
+                    Special Requirements
+                  </label>
                   <textarea
                     id="notes"
                     name="notes"
@@ -221,7 +303,9 @@ export default function Booking() {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-4 text-base font-bold text-accent-foreground shadow-lg transition-all hover:shadow-xl hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Send className="h-5 w-5" />
-                {isSubmitting ? "Redirecting to WhatsApp..." : "Send Booking Enquiry on WhatsApp"}
+                {isSubmitting
+                  ? "Redirecting to WhatsApp..."
+                  : "Send Booking Enquiry on WhatsApp"}
               </button>
             </form>
           </div>

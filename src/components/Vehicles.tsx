@@ -2,7 +2,7 @@ import { vehicles } from "@/lib/site-config";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import "./Vehicles.css";
-import lineupImg from "@/assets/line-up2.png";
+import lineupImg from "@/assets/line-up2.webp";
 
 export default function Vehicles() {
   const navigate = useNavigate();
@@ -102,7 +102,7 @@ export default function Vehicles() {
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl font-display">
-            Best Travel Operator in Kochi
+            Best Travel Operator in 
           </h2>
           <p className="mt-4 text-muted-foreground">
             Choose from our well-maintained vehicles for a safe, comfortable,
@@ -194,7 +194,9 @@ export default function Vehicles() {
                 </div>
 
                 <button
-                  onClick={() => navigate(v.ctaLink)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(v.ctaLink) }}
                   className="
                     rounded-lg
                     bg-primary

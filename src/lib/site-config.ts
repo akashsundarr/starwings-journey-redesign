@@ -9,9 +9,9 @@ import coachImg from "@/assets/coach-non-ac.webp";
 export const siteConfig = {
   name: "Starwings Tours & Travels",
   phone: "+91 730606 3033",
-  email: "akashsundarrr@gmail.com",
+  email: "starwingsholidays@gmail.com",
   whatsapp: "917306063033",
-  address: "Kochi, Kerala, India",
+  address: "Tamil Nadu, India",
 };
 
 
@@ -25,7 +25,7 @@ export const vehicles = [
     freeKm: 100,
     extraKmRate: 13,
     image: ciazImg,
-    ctaLink: "/book/ciaz",
+    ctaLink: "/booking",
   },
   {
     id: "innova-crysta",
@@ -36,7 +36,7 @@ export const vehicles = [
     freeKm: 100,
     extraKmRate: 16,
     image: innovaImg,
-    ctaLink: "/book/innova-crysta",
+    ctaLink: "/booking",
   },
   {
     id: "tempo-traveller",
@@ -47,7 +47,7 @@ export const vehicles = [
     freeKm: 100,
     extraKmRate: 22,
     image: tempoImg,
-    ctaLink: "/book/tempo-traveller",
+    ctaLink: "/booking",
   },
   {
     id: "urbania",
@@ -58,7 +58,7 @@ export const vehicles = [
     freeKm: 100,
     extraKmRate: 25,
     image: urbaniaImg,
-    ctaLink: "/book/urbania",
+    ctaLink: "/booking",
   },
   {
     id: "benz-c-class",
@@ -69,7 +69,7 @@ export const vehicles = [
     freeKm: 100,
     extraKmRate: 40,
     image: benzImg,
-    ctaLink: "/book/benz-c-class",
+    ctaLink: "/booking",
   },
   {
     id: "coach-non-ac",
@@ -80,6 +80,6 @@ export const vehicles = [
     freeKm: 100,
     extraKmRate: 30,
     image: coachImg,
-    ctaLink: "/book/coach-non-ac",
+    ctaLink: "/booking",
   },
 ];

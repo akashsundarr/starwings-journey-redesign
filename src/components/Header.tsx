@@ -33,8 +33,8 @@ export default function Header() {
           >
             <img
               src="/logo.png"
-              alt="Jay Tours and Travels"
-              className="h-12 w-auto"
+              alt="Company Logo"
+              className="h-20 w-auto"
             />
           </div>
 
