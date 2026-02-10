@@ -2,7 +2,7 @@ import { vehicles } from "@/lib/site-config";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import "./Vehicles.css";
-import lineupImg from "@/assets/line-up.png";
+import lineupImg from "@/assets/line-up3.png";
 
 export default function Vehicles() {
   const navigate = useNavigate();
