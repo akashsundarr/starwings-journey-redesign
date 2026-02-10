@@ -2,6 +2,7 @@ import { vehicles } from "@/lib/site-config";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import "./Vehicles.css";
+import lineupImg from "@/assets/line-up.png";
 
 export default function Vehicles() {
   const navigate = useNavigate();
@@ -256,7 +257,7 @@ export default function Vehicles() {
     "
   >
     <img
-      src="/src/assets/line-up.png"
+      src={lineupImg}
       alt="Complete vehicle fleet lineup"
       loading="lazy"
       className="
